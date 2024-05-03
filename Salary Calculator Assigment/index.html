@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="stylesheet.css">
+  <script defer src="client.js"></script>
   <title>Salary Calculator</title>
 </head>
+
 <body>
   <header>
     <h1>Salary Calculator</h1>
   </header>
   <main>
     <h2>Add Employee</h2>
+    <form onSubmit="handleSubmit(event)">
+      <input id="firstName"
+        placeholder="First Name"
+        type="text">
+      <input id="lastName"
+        placeholder="Last Name"
+        type="text">
+      <input id="identity"
+        placeholder="ID"
+        type="text">
+      <input id="title"
+        placeholder="Title"
+        type="text">
+      <input id="annualSalary"
+        placeholder="Annual Salary"
+        type="text">
+      <button>Submit</button>
+    </form>
+  </section>
+  <div id="messages">
     <h2>Employees</h2>
     <div class="container">
-  
-      <table class="table table-bordered">
+      <table>
         <thead>
           <tr>
-            <th></th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>ID Number</th>
-            <th>Job Title</th>
+            <th>ID</th>
+            <th>Title</th>
             <th>Annual Salary</th>
+            <th>Delete</th>
           </tr>
         </thead>
-        <tbody id="content"></tbody>
+        <tbody id="affirmationLocation">
+
+        </tbody>
       </table>
   </main>
-  <button class="clickables" id="submitBtn" onClick="submitButtonFunction()">Submit</button>
   <button class="clickables" id="deleteBtn" onClick="deleteButtonFunction()">Delete</button>
   <footer>
     <p>Total Monthly:</p>
   </footer>
 </body>
+
 </html>
+
+///* This application should have a form with five inputs that collect a
+//new employee's *first name, last name, ID number, job title, annual salary*.
+//
