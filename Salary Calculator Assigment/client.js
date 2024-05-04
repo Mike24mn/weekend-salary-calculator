@@ -30,7 +30,18 @@ function handleSubmit(event) {
         }
 
     }
-    else { messageOutput.innerHTML = "Need to Enter values for input" }
+
+
+
+else { 
+    messageOutput.innerHTML = "Need to Enter values for input" 
+} // FIX THIS, MESSAGE NOT APPEARING
+
+    document.getElementById("firstName").value = ""
+    document.getElementById("lastName").value = ""
+    document.getElementById("identity").value = ""
+    document.getElementById("title").value = ""
+    document.getElementById("annualSalary").value = ""
 }
 
 function addEmployeeInfo() {
