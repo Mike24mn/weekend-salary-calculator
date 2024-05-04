@@ -1,14 +1,18 @@
-const employees = [
+// So far, unnecessary object REMEMBER TO DELETE IF NOT USED
+/* const employees = [
     firstName = '',
     lastName = '',
     idNumber = '',
     jobTitle = '',
     annualSalary = ''
-]
+] 
+*/ 
 
 function handleSubmit(event) {
     console.log('handle submit works...')
     event.preventDefault()
+    let initialValue = 0
+    console.log("initialValue is: ", initialValue);
     let firstNameInput = document.getElementById('firstName').value
     let lastNameInput = document.getElementById('lastName').value
     let idInput = document.getElementById('identity').value
@@ -26,18 +30,16 @@ function handleSubmit(event) {
     <td>${titleInput}</td>
     <td>${annualSalaryInput}</td>
     <td><button onClick="deleteSubmission(event)">Delete</button></td>
-  </tr>
+    </tr>
   `
+  totalMonthly = initialValue + parseInt(annualSalaryInput)
+  console.log("totalMonthly is: ", totalMonthly)
         }
 
     }
-
-
-
 else { 
     messageOutput.innerHTML = "* Missing information, please ensure all fields are filled out prior to submission" 
-} // FIX THIS, MESSAGE NOT APPEARING
-
+}
     document.getElementById("firstName").value = ""
     document.getElementById("lastName").value = ""
     document.getElementById("identity").value = ""
@@ -45,18 +47,23 @@ else {
     document.getElementById("annualSalary").value = ""
 }
 
+// End handleSubmit function
+
 function addEmployeeInfo() {
     console.log("Employee info works");
 }
+
+//End addEmployeeInfo function
 
 function deleteSubmission(event) {
     console.log('deleteSubmission works')
     console.log(event)
     let thisColumn = event.target.parentElement.parentElement
-    let deleteTableRow = event.target.parentElement.parentElement // Targets parent parent element
+    let deleteTableRow = event.target.parentElement.parentElement // Targets parents parent element, meaning entire table row!
     thisColumn.remove()
 }
 
+//End deleteSubmission function
 
 
 
