@@ -14,8 +14,9 @@ function handleSubmit(event) {
     let idInput = document.getElementById('identity').value
     let titleInput = document.getElementById('title').value
     let annualSalaryInput = document.getElementById('annualSalary').value
+    let messageOutput = document.getElementById('messages')
     console.log(`incoming information: ${firstNameInput},  ${lastNameInput}, ${idInput}, ${annualSalaryInput}`)
-    if (firstNameInput.length > 0 && lastNameInput.length > 0 && idInput.length > 0 && titleInput.length > 0) {
+    if (firstNameInput.length > 0 && lastNameInput.length > 0 && idInput.length > 0 && titleInput.length > 0 && annualSalaryInput.length > 0) {
         {
             let tableInfusion = document.getElementById("containerLocation")
             tableInfusion.innerHTML += `<tr>
@@ -34,7 +35,7 @@ function handleSubmit(event) {
 
 
 else { 
-    messageOutput.innerHTML = "Need to Enter values for input" 
+    messageOutput.innerHTML = "* Missing information, please ensure all fields are filled out prior to submission" 
 } // FIX THIS, MESSAGE NOT APPEARING
 
     document.getElementById("firstName").value = ""
